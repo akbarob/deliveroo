@@ -5,7 +5,6 @@ import ResturantCard from "./ResturantCard";
 import { Sanityclient } from "../sanity";
 
 const FeaturedRow = ({ id, title, desc }) => {
-  console.log(id);
   const [restaurants, setRestaurants] = useState([]);
   useEffect(() => {
     Sanityclient.fetch(
@@ -23,7 +22,6 @@ const FeaturedRow = ({ id, title, desc }) => {
     )
       .then((data) => setRestaurants(data?.restaurants))
       .catch(console.error);
-    // console.log("frow", restaurants);
   }, [id]);
 
   return (

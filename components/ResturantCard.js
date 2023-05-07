@@ -21,7 +21,6 @@ const ResturantCard = ({
 }) => {
   const route = useRouter();
   const dispatch = useDispatch();
-  // console.log(dishes);
   return (
     <TouchableOpacity
       onPress={() => {

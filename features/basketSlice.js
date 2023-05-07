@@ -10,13 +10,10 @@ export const basketSlice = createSlice({
   reducers: {
     addToBasket: (state, action) => {
       state.items = [...state.items, action.payload];
-
-      console.log(action.payload);
     },
     removeFromBasket: (state, action) => {
       const index = state.items.findIndex((item) => item.id === action.payload);
 
-      console.log(action.payload);
       let newBasket = [...state.items];
 
       if (index >= 0) {

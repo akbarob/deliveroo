@@ -15,10 +15,11 @@ import {
 } from "react-native-heroicons/outline";
 import Basket from "../../components/Basket";
 import DishRow from "../../components/DishRow";
+export { ErrorBoundary } from "expo-router";
 
 const Resturant = () => {
   const navigation = useNavigation();
-  const restu = useSelector((state) => state.restaurant.restu);
+  const restaurant = useSelector((state) => state.restaurant.restaurant);
   const {
     id,
     imgUrl,
@@ -30,7 +31,7 @@ const Resturant = () => {
     dishes,
     long,
     lat,
-  } = restu;
+  } = restaurant;
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -92,7 +93,7 @@ const Resturant = () => {
         </View>
 
         <View className="pb-32">
-          <Text className="pt-6 mb-3 font-bold text-xl ">Menu</Text>
+          <Text className="pt-6 mb-3 font-bold text-xl pl-4">Menu</Text>
           {dishes?.map((dish) => (
             <DishRow
               key={dish._id}

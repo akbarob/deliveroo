@@ -4,10 +4,10 @@ import CategoryCard from "./CategoryCard";
 import { Sanityclient } from "../sanity";
 
 const Categories = () => {
-  const [categorires, setCategorires] = useState([]);
+  const [categories, setCategories] = useState([]);
   useEffect(() => {
     Sanityclient.fetch(`*[_type =='category']`).then((data) =>
-      setCategorires(data)
+      setCategories(data)
     );
   }, []);
 
@@ -21,7 +21,7 @@ const Categories = () => {
       showsHorizontalScrollIndicator={false}
     >
       {/* CateoryCard */}
-      {categorires?.map((category) => (
+      {categories?.map((category) => (
         <CategoryCard
           key={category._id}
           imgUrl={category.image}
